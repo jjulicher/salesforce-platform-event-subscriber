@@ -13,7 +13,7 @@ let getMixes = (req, res) => {
 };
 
 let PORT = process.env.PORT || 5000;
-
+console.log('Using Port: ' + PORT);
 app.use(cors());
 app.use('/', express.static(__dirname + '/www'));
 app.get('/mixes', getMixes);
@@ -34,6 +34,11 @@ let SF_USER_NAME = process.env.SF_USER_NAME;
 let SF_USER_PASSWORD = process.env.SF_USER_PASSWORD;
 let SF_ENVIRONMENT = process.env.SF_ENVIRONMENT;
 let REDIRECT_URL = process.env.REDIRECT_URL ? process.env.REDIRECT_URL : (process.env.HEROKU_APP_NAME + ".heroukapp.com");
+
+console.log('SF_ENVIRONMENT: ' + SF_ENVIRONMENT);
+console.log('REDIRECT_URL: ' + REDIRECT_URL);
+console.log('SF_USER_NAME: ' + SF_USER_NAME);
+console.log('SF_CLIENT_ID: ' + SF_CLIENT_ID);
 
 let org = nforce.createConnection({
     clientId: SF_CLIENT_ID,
