@@ -17,6 +17,10 @@
     "SF_USER_PASSWORD": {
         "description": "Salesforce password for your integration user",
         "value":""
+    },
+    "SF_ENVIRONMENT": {
+        "description": "The Salesforce  for your integration user - valid values are PRODUCTION OR SANDBOX",
+        "value":"SANDBOX"
     }
   }
 }
