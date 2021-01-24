@@ -32,12 +32,13 @@ let SF_CLIENT_ID = process.env.SF_CLIENT_ID;
 let SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET;
 let SF_USER_NAME = process.env.SF_USER_NAME;
 let SF_USER_PASSWORD = process.env.SF_USER_PASSWORD;
+let SF_ENVIRONMENT = process.env.SF_ENVIRONMENT;
 let REDIRECT_URL = process.env.REDIRECT_URL ? process.env.REDIRECT_URL : (process.env.HEROKU_APP_NAME + ".heroukapp.com");
 
 let org = nforce.createConnection({
     clientId: SF_CLIENT_ID,
     clientSecret: SF_CLIENT_SECRET,
-    environment: "production",
+    environment: SF_ENVIRONMENT,
     redirectUri: REDIRECT_URL,
     mode: 'single',
     autoRefresh: true,
